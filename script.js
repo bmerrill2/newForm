@@ -1,4 +1,4 @@
-window.load = function() {
+window.onload = function() {
   var testValidation = function(dto, success, error) {
     console.log("dto....", dto, success, error);
     if (dto.text.indexOf("world") != -1) return success();
