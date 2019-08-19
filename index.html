@@ -15,25 +15,150 @@
   <button type="submit">Send</button>
 </form>
 -->
-<h1>Test Submit</h1>
+    <h1>Test New</h1>
     <form id="form" name="submit-to-google-sheet">
 
-        <fieldset cf-questions="Ready to try a conditional flow?">
-            <label for="intro-yes">Yes
-                <input type="radio" name="cfc-intro" id="intro-yes" value="yes">
+        <fieldset cf-questions="What was your Trainer's Name?" required>
+            <label for="trainer-craig">Craig
+                <input type="radio" name="cfc-trainer" id="trainer-craig" value="Craig Zimet">
             </label>
 
-            <label for="intro-no">No thanks
-                <input type="radio" name="cfc-intro" id="intro-no" value="no">
+            <label for="trainer-caroline">Caroline
+                <input type="radio" name="cfc-trainer" id="trainer-caroline" value="Caroline Coats">
             </label>
 
-            <label for="intro-disabled">Disabled..
-                <input type="radio" disabled name="cfc-intro" id="intro-disabled" value="ignore">
+            <label for="trainer-wyatt">Wyatt
+                <input type="radio" name="cfc-trainer" id="trainer-wyatt" value="Wyatt Moore">
+            </label>
+            <label for="trainer-lori">Kori
+                <input type="radio" name="cfc-trainer" id="trainer-kori" value="Kori Peterson">
+            </label>
+
+            <label for="trainer-megan">Megan
+                <input type="radio" name="cfc-trainer" id="trainer-megan" value="Megan Settles">
+            </label>
+
+            <label for="trainer-patrick">Patrick
+                <input type="radio" name="cfc-trainer" id="trainer-patrick" value="Patrick Newman">
+            </label>
+            <label for="trainer-jordan">Jordan
+                <input type="radio" name="cfc-trainer" id="trainer-jordan" value="Jordan Mills">
+            </label>
+
+            <label for="trainer-vivian">Vivian
+                <input type="radio" name="cfc-trainer" id="trainer-vivian" value="Vivian Laws">
+            </label>
+
+            <label for="trainer-lehi">Lehi
+                <input type="radio" name="cfc-trainer" id="trainer-lehi" value="Lehi">
             </label>
         </fieldset>
 
-        <input type="text" id="gr8" name="cfc-step1" cf-questions="Conditional flow pre, please write, <strong>gr8</strong> to continue, if you write something else than <strong>gr8</strong> the will you will skip elements." cf-conditional-cfc-intro="yes" />
+        <input required type="text" id="trainee-name" name="cfc-trainee-name" cf-questions="What is your name" cf-error="please enter your name"/>
 
+        <input required type="email" id="trainee-email" name="cfc-trainee-email" cf-questions="What is your email address?" cf-error="email address should include @" />
+        
+        <cf-robot-message cf-questions="Thanks for attending the training {trainee-name}, please answer the following questions?"></cf-robot-message>
+        
+        <fieldset cf-questions="My trainer knew the course material">
+            <input required type="radio" name="cfc-material" id="material-1" value="1">
+            <label for="material-1">1 - No</label>
+
+            <input required type="radio" name="cfc-material" id="material-2" value="2">
+            <label for="material-2">2</label>
+
+            <input required type="radio" name="cfc-material" id="material-3" value="3">
+            <label for="material-3">3</label>
+            
+            <input required type="radio" name="cfc-material" id="material-4" value="4">
+            <label for="material-4">4</label>
+
+            <input required type="radio" name="cfc-material" id="material-5" value="5">
+            <label for="material-5">5</label>
+
+            <input required type="radio" name="cfc-material" id="material-6" value="6">
+            <label for="material-6">6</label>
+            
+            <input required type="radio" name="cfc-material" id="material-7" value="7">
+            <label for="material-7">7</label>
+
+            <input required type="radio" name="cfc-material" id="material-8" value="8">
+            <label for="material-8">8</label>
+
+            <input required type="radio" name="cfc-material" id="material-9" value="9">
+            <label for="material-9">9</label>
+            
+            <input required type="radio" name="cfc-material" id="material-10" value="10">
+            <label for="material-10">10 - Exceptional</label>
+        </fieldset>
+        
+        <fieldset cf-questions="How engaging was your trainer?">
+            <input required type="radio" name="cfc-engaging" id="engaging-1" value="1">
+            <label for="engaging-1">1 - Not at all</label>
+
+            <input required type="radio" name="cfc-engaging" id="engaging-2" value="2">
+            <label for="engaging-2">2</label>
+
+            <input required type="radio" name="cfc-engaging" id="engaging-3" value="3">
+            <label for="engaging-3">3</label>
+            
+            <input required type="radio" name="cfc-engaging" id="engaging-4" value="4">
+            <label for="engaging-4">4</label>
+
+            <input required type="radio" name="cfc-engaging" id="engaging-5" value="5">
+            <label for="engaging-5">5</label>
+
+            <input required type="radio" name="cfc-engaging" id="engaging-6" value="6">
+            <label for="engaging-6">6</label>
+            
+            <input required type="radio" name="cfc-engaging" id="engaging-7" value="7">
+            <label for="engaging-7">7</label>
+
+            <input required type="radio" name="cfc-engaging" id="engaging-8" value="8">
+            <label for="engaging-8">8</label>
+
+            <input required type="radio" name="cfc-engaging" id="engaging-9" value="9">
+            <label for="engaging-9">9</label>
+            
+            <input required type="radio" name="cfc-engaging" id="engaging-10" value="10">
+            <label for="engaging-10">10 - Very engaging</label>
+        </fieldset>
+        
+        <input required type="text" id="engaging-text" name="cfc-engaging-text" cf-questions="What could the trainer have done to be more engaging" cf-conditional-cfc-engaging="1||2||3||4||5||6||7" cf-error="please provide some details as to how the trainer could have been more engaging"/>
+        
+        <fieldset cf-questions="How comfortable did you feel asking questions?">
+            <input required type="radio" name="cfc-questions" id="questions-1" value="1">
+            <label for="questions-1">1 - Not at all</label>
+
+            <input required type="radio" name="cfc-questions" id="questions-2" value="2">
+            <label for="questions-2">2</label>
+
+            <input required type="radio" name="cfc-questions" id="questions-3" value="3">
+            <label for="questions-3">3</label>
+            
+            <input required type="radio" name="cfc-questions" id="questions-4" value="4">
+            <label for="questions-4">4</label>
+
+            <input required type="radio" name="cfc-questions" id="questions-5" value="5">
+            <label for="questions-5">5</label>
+
+            <input required type="radio" name="cfc-questions" id="questions-6" value="6">
+            <label for="questions-6">6</label>
+            
+            <input required type="radio" name="cfc-questions" id="questions-7" value="7">
+            <label for="questions-7">7</label>
+
+            <input required type="radio" name="cfc-questions" id="questions-8" value="8">
+            <label for="questions-8">8</label>
+
+            <input required type="radio" name="cfc-questions" id="questions-9" value="9">
+            <label for="questions-9">9</label>
+            
+            <input required type="radio" name="cfc-questions" id="questions-10" value="10">
+            <label for="questions-10">10 - Very comfortable</label>
+        </fieldset>
+
+<!--
         <fieldset cf-questions="<strong>{gr8}!</strong> Please choose a path.">
             <input required type="radio" name="cfc-path" id="path-a" value="a" cf-conditional-cfc-step1="^gr8$||great">
             <label for="path-a">Path A</label>
@@ -44,6 +169,7 @@
             <input required type="radio" name="cfc-path" id="path-d" value="d" cf-conditional-cfc-step1="^gr8$||great">
             <label for="path-d">Path D (C is ignored)</label>
         </fieldset>
+-->
 
         <!--Path A-->
         <input id="path-a-1" type="text" cf-questions="Path A question 1/1, try and change your previous choice to B" cf-conditional-cfc-path="a" />
@@ -85,7 +211,7 @@
         <input type="text" cf-questions="Path D question 2/2/22" cf-conditional-path-d-option="option-b" />
 
         <!-- standard flow, no confitionals -->
-        <input id="nope" type="text" cf-questions="You decided not to continue on the conditional adventure, Zelda is sad." cf-conditional-cfc-intro="no" />
+        <input id="nope" type="text" cf-questions="You decided not to continue on the conditional adventure, Zelda is sad." cf-conditional-cfc-trainer="no" />
 
         <fieldset cf-questions="I am apart of standard flow, a natural part of the flow. No conditionals involved here.">
             <input required type="radio" name="standard-radios" id="standard-yes" value="a">
@@ -95,11 +221,12 @@
             <label for="standard-no">Standard radio 2</label>
         </fieldset>
 
-        <input id="outsider" type="submit" cf-questions="Lst step of the flow (not a conditional step)" />
+        <input id="outsider" type="text" cf-questions="Lst step of the flow (not a conditional step)" />
     </form>
     <div id="cf-context" role="cf-context" cf-context></div>
 
-    
+
+    <!--
 <script>
   const scriptURL = 'https://script.google.com/a/entrata.com/macros/s/AKfycbwYm_NDAYSyjeUKCkLFYEhiq6eL10l4iJr-GN7-/exec'
   const form = document.forms['submit-to-google-sheet']
@@ -110,6 +237,7 @@
       .catch(error => console.error('Error!', error.message))
   })
 </script>
+-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@latest/dist/conversational-form.min.js"></script>
