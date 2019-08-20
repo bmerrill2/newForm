@@ -19,6 +19,7 @@ window.onload = function () {
         context: document.getElementById("cf-context"),
         eventDispatcher: dispatcher,
         preventAutoFocus: false,
+        theme: "red",
         flowStepCallback: function (dto, success, error) {
             success();
         },
