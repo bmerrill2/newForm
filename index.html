@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title></title>
 </head>
 
@@ -16,8 +18,7 @@
   <button type="submit">Send</button>
 </form>
 -->
-    <h1>Mobile</h1>
-    <form id="form" name="submit-to-google-sheet">
+    <form id="form" class="form" name="submit-to-google-sheet">
 
         <fieldset cf-questions="What was your Trainer's Name?" required>
             <label for="trainer-craig">Craig
@@ -166,7 +167,7 @@
             <input required type="radio" name="cfc-ask-questions" id="ask-no" value="no">
             <label for="ask-no">No</label>
         </fieldset>
-        
+
         <fieldset cf-questions="Were all of your questions answered?">
             <input required type="radio" name="cfc-questions-answered" id="answered-yes" value="yes" cf-conditional-cfc-ask-questions="yes">
             <label for="answered-yes">Yes</label>
@@ -174,7 +175,7 @@
             <input required type="radio" name="cfc-questions-answered" id="answered-no" value="no" cf-conditional-cfc-ask-questions="yes">
             <label for="answered-no">No</label>
         </fieldset>
-        
+
         <fieldset cf-questions="The learning objectives for my training were clearly defined?">
             <input required type="radio" name="cfc-learning-objectives-defined" id="learning-objectives-defined-yes" value="yes">
             <label for="learning-objectives-defined-yes">Yes</label>
@@ -183,7 +184,7 @@
             <label for="learning-objectives-defined-no">No</label>
         </fieldset>
 
-        
+
         <fieldset cf-questions="How well did the content trained match the learning objectives?">
             <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-1" value="1">
             <label for="learning-objectives-met-1">1 - Not at all</label>
@@ -215,11 +216,11 @@
             <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-10" value="10">
             <label for="learning-objectives-met-10">10 - Extremely Well</label>
         </fieldset>
-        
-         <input required type="text" id="knowledge-gained" name="cfc-knowledge-gained" cf-questions="What knowledge and/or skills did you obtain that you are most likely to use in your job?" cf-error="please enter in knowledge gained, if you feel you didn't learn anything, type 'none'" />
-        
-        <input required type="text" id="nothing-learned" name="cfc-nothing-learned" cf-questions="We are sorry you feel like you didn't learn anything in this training {trainee-name}. What could the trainer have done to help you better learn the material?" cf-error="please provide a response so we can better help you and others in the future" cf-conditional-cfc-knowledge-gained="^none||None||nothing||Nothing"/>
-        
+
+        <input required type="text" id="knowledge-gained" name="cfc-knowledge-gained" cf-questions="What knowledge and/or skills did you obtain that you are most likely to use in your job?" cf-error="please enter in knowledge gained, if you feel you didn't learn anything, type 'none'" />
+
+        <input required type="text" id="nothing-learned" name="cfc-nothing-learned" cf-questions="We are sorry you feel like you didn't learn anything in this training {trainee-name}. What could the trainer have done to help you better learn the material?" cf-error="please provide a response so we can better help you and others in the future" cf-conditional-cfc-knowledge-gained="^none||None||nothing||Nothing" />
+
         <fieldset cf-questions="How likely would you be to recommend this training to a colleague or friend?">
             <input required type="radio" name="cfc-recommend" id="recommend-1" value="1">
             <label for="recommend-1">1 - Not Likely</label>
@@ -250,10 +251,10 @@
 
             <input required type="radio" name="cfc-recommend" id="recommend-10" value="10">
             <label for="recommend-10">10 - Very Likely</label>
-        </fieldset> 
-        
+        </fieldset>
+
         <input required type="text" id="recommend-text" name="cfc-recommend-text" cf-questions="What could the trainer have done to make this a more effective training for you?" cf-conditional-cfc-recommend="1||2||3||4||5||6||7" cf-error="please provide some details as to how the trainer could have been more helpful" />
-        
+
         <fieldset cf-questions="Do you or your staff need/want any additional training?">
             <input required type="radio" name="cfc-more-training" id="more-training-yes" value="yes">
             <label for="more-training-yes">Yes</label>
@@ -261,13 +262,13 @@
             <input required type="radio" name="cfc-more-training" id="more-training-no" value="no">
             <label for="more-training-no">No</label>
         </fieldset>
-        
+
         <input required type="text" id="more-training-text" name="cfc-more-training-text" cf-questions="What do you want to learn more about?" cf-conditional-cfc-more-training="yes" cf-error="please provide some details of what training you need" />
-        
+
         <input type="text" id="comments" name="cfc-comments" cf-questions="Any additional comments or notes for the training team?" cf-error="please provide some details of what training you need" />
-        
+
         <cf-robot-message cf-questions="Thanks for taking time to help us improve our training {trainee-name}, we look forward to working with you again in the future"></cf-robot-message>
-        
+
         <!--
         <fieldset cf-questions="<strong>{gr8}!</strong> Please choose a path.">
             <input required type="radio" name="cfc-path" id="path-a" value="a" cf-conditional-cfc-step1="^gr8$||great">
@@ -282,7 +283,7 @@
 -->
 
         <!--Path A-->
-<!--
+        <!--
         <input id="path-a-1" type="text" cf-questions="Path A question 1/1, try and change your previous choice to B" cf-conditional-cfc-path="a" />
 
         Path B
@@ -299,7 +300,7 @@
         <!-- if both checkboxes are checked-->
         <!-- also path b -->
         <!-- two different conditions !-->
-<!--
+        <!--
         <input id="path-b-alternative" type="text" cf-questions="Both checkboxes checked and path 'b' was choosen, hurray \o/" cf-conditional-cfc-path="b" cf-conditional-cfc-path-b-checkbox="test1,test2" />
 
         <fieldset cf-questions="Path B question 2/2, radio buttons, <strong>hint:</strong> choose one to continue">
@@ -312,10 +313,10 @@
 -->
 
         <!--Path C-->
-<!--        <input type="text" cf-questions="Path C question 1/1, I will be completly ignored as there is no C Path." cf-conditional-cfc-path="c" />-->
+        <!--        <input type="text" cf-questions="Path C question 1/1, I will be completly ignored as there is no C Path." cf-conditional-cfc-path="c" />-->
 
         <!--Path D, section > option-->
-<!--
+        <!--
         <select cf-questions="Path D question 1/1, Pick an option." cf-conditional-cfc-path="d" name="path-d-option">
             <option value="option-a" selected>Path D 2/2 #1</option>
             <option value="option-b">Path D 2/2 #2</option>
@@ -327,7 +328,7 @@
 -->
 
         <!-- standard flow, no confitionals -->
-<!--
+        <!--
         <input id="nope" type="text" cf-questions="You decided not to continue on the conditional adventure, Zelda is sad." cf-conditional-cfc-trainer="no" />
 
         <fieldset cf-questions="I am apart of standard flow, a natural part of the flow. No conditionals involved here.">
@@ -340,8 +341,11 @@
 
         <input id="outsider" type="text" cf-questions="Lst step of the flow (not a conditional step)" />
 -->
+
     </form>
-    <div id="cf-context" role="cf-context" cf-context></div>
+    <div id="cf-context" class="conversational-form-inner" role="cf-context" cf-context></div>
+
+
 
 
     <!--
@@ -360,6 +364,9 @@
 
     <script src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@latest/dist/conversational-form.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

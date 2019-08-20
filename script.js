@@ -22,6 +22,7 @@ window.onload = function () {
         flowStepCallback: function (dto, success, error) {
             success();
         },
+        
         submitCallback: function () {
             // remove Conversational Form
             alert("You made it!");
