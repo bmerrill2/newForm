@@ -18,7 +18,7 @@ window.onload = function () {
         formEl: document.getElementById("form"),
         context: document.getElementById("cf-context"),
         eventDispatcher: dispatcher,
-        preventAutoFocus: true,
+        preventAutoFocus: false,
         flowStepCallback: function (dto, success, error) {
             success();
         },

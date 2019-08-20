@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -54,12 +55,12 @@
             </label>
         </fieldset>
 
-        <input required type="text" id="trainee-name" name="cfc-trainee-name" cf-questions="What is your name" cf-error="please enter your name"/>
+        <input required type="text" id="trainee-name" name="cfc-trainee-name" cf-questions="What is your name" cf-error="please enter your name" />
 
-        <input required type="email" id="trainee-email" name="cfc-trainee-email" cf-questions="What is your email address?" cf-error="email address should include @" />
-        
+        <input required type="email" id="trainee-email" name="cfc-trainee-email" autofocus cf-questions="What is your email address?" cf-error="email address should include @" />
+
         <cf-robot-message cf-questions="Thanks for attending the training {trainee-name}, please answer the following questions?"></cf-robot-message>
-        
+
         <fieldset cf-questions="My trainer knew the course material">
             <input required type="radio" name="cfc-material" id="material-1" value="1">
             <label for="material-1">1 - No</label>
@@ -69,7 +70,7 @@
 
             <input required type="radio" name="cfc-material" id="material-3" value="3">
             <label for="material-3">3</label>
-            
+
             <input required type="radio" name="cfc-material" id="material-4" value="4">
             <label for="material-4">4</label>
 
@@ -78,7 +79,7 @@
 
             <input required type="radio" name="cfc-material" id="material-6" value="6">
             <label for="material-6">6</label>
-            
+
             <input required type="radio" name="cfc-material" id="material-7" value="7">
             <label for="material-7">7</label>
 
@@ -87,11 +88,11 @@
 
             <input required type="radio" name="cfc-material" id="material-9" value="9">
             <label for="material-9">9</label>
-            
+
             <input required type="radio" name="cfc-material" id="material-10" value="10">
             <label for="material-10">10 - Exceptional</label>
         </fieldset>
-        
+
         <fieldset cf-questions="How engaging was your trainer?">
             <input required type="radio" name="cfc-engaging" id="engaging-1" value="1">
             <label for="engaging-1">1 - Not at all</label>
@@ -101,7 +102,7 @@
 
             <input required type="radio" name="cfc-engaging" id="engaging-3" value="3">
             <label for="engaging-3">3</label>
-            
+
             <input required type="radio" name="cfc-engaging" id="engaging-4" value="4">
             <label for="engaging-4">4</label>
 
@@ -110,7 +111,7 @@
 
             <input required type="radio" name="cfc-engaging" id="engaging-6" value="6">
             <label for="engaging-6">6</label>
-            
+
             <input required type="radio" name="cfc-engaging" id="engaging-7" value="7">
             <label for="engaging-7">7</label>
 
@@ -119,13 +120,13 @@
 
             <input required type="radio" name="cfc-engaging" id="engaging-9" value="9">
             <label for="engaging-9">9</label>
-            
+
             <input required type="radio" name="cfc-engaging" id="engaging-10" value="10">
             <label for="engaging-10">10 - Very engaging</label>
         </fieldset>
-        
-        <input required type="text" id="engaging-text" name="cfc-engaging-text" cf-questions="What could the trainer have done to be more engaging" cf-conditional-cfc-engaging="1||2||3||4||5||6||7" cf-error="please provide some details as to how the trainer could have been more engaging"/>
-        
+
+        <input required type="text" id="engaging-text" name="cfc-engaging-text" cf-questions="What could the trainer have done to be more engaging?" cf-conditional-cfc-engaging="1||2||3||4||5||6||7" cf-error="please provide some details as to how the trainer could have been more engaging" />
+
         <fieldset cf-questions="How comfortable did you feel asking questions?">
             <input required type="radio" name="cfc-questions" id="questions-1" value="1">
             <label for="questions-1">1 - Not at all</label>
@@ -135,7 +136,7 @@
 
             <input required type="radio" name="cfc-questions" id="questions-3" value="3">
             <label for="questions-3">3</label>
-            
+
             <input required type="radio" name="cfc-questions" id="questions-4" value="4">
             <label for="questions-4">4</label>
 
@@ -144,7 +145,7 @@
 
             <input required type="radio" name="cfc-questions" id="questions-6" value="6">
             <label for="questions-6">6</label>
-            
+
             <input required type="radio" name="cfc-questions" id="questions-7" value="7">
             <label for="questions-7">7</label>
 
@@ -153,12 +154,121 @@
 
             <input required type="radio" name="cfc-questions" id="questions-9" value="9">
             <label for="questions-9">9</label>
-            
+
             <input required type="radio" name="cfc-questions" id="questions-10" value="10">
             <label for="questions-10">10 - Very comfortable</label>
         </fieldset>
 
-<!--
+        <fieldset cf-questions="Did you ask the trainer any questions?">
+            <input required type="radio" name="cfc-ask-questions" id="ask-yes" value="yes">
+            <label for="ask-yes">Yes</label>
+
+            <input required type="radio" name="cfc-ask-questions" id="ask-no" value="no">
+            <label for="ask-no">No</label>
+        </fieldset>
+        
+        <fieldset cf-questions="Were all of your questions answered?">
+            <input required type="radio" name="cfc-questions-answered" id="answered-yes" value="yes" cf-conditional-cfc-ask-questions="yes">
+            <label for="answered-yes">Yes</label>
+
+            <input required type="radio" name="cfc-questions-answered" id="answered-no" value="no" cf-conditional-cfc-ask-questions="yes">
+            <label for="answered-no">No</label>
+        </fieldset>
+        
+        <fieldset cf-questions="The learning objectives for my training were clearly defined?">
+            <input required type="radio" name="cfc-learning-objectives-defined" id="learning-objectives-defined-yes" value="yes">
+            <label for="learning-objectives-defined-yes">Yes</label>
+
+            <input required type="radio" name="cfc-learning-objectives-defined" id="learning-objectives-defined-no" value="no">
+            <label for="learning-objectives-defined-no">No</label>
+        </fieldset>
+
+        
+        <fieldset cf-questions="How well did the content trained match the learning objectives?">
+            <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-1" value="1">
+            <label for="learning-objectives-met-1">1 - Not at all</label>
+
+            <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-2" value="2">
+            <label for="learning-objectives-met-2">2</label>
+
+            <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-3" value="3">
+            <label for="learning-objectives-met-3">3</label>
+
+            <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-4" value="4">
+            <label for="learning-objectives-met-4">4</label>
+
+            <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-5" value="5">
+            <label for="learning-objectives-met-5">5</label>
+
+            <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-6" value="6">
+            <label for="learning-objectives-met-6">6</label>
+
+            <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-7" value="7">
+            <label for="learning-objectives-met-7">7</label>
+
+            <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-8" value="8">
+            <label for="learning-objectives-met-8">8</label>
+
+            <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-9" value="9">
+            <label for="learning-objectives-met-9">9</label>
+
+            <input required type="radio" name="cfc-learning-objectives-met" id="learning-objectives-met-10" value="10">
+            <label for="learning-objectives-met-10">10 - Extremely Well</label>
+        </fieldset>
+        
+         <input required type="text" id="knowledge-gained" name="cfc-knowledge-gained" cf-questions="What knowledge and/or skills did you obtain that you are most likely to use in your job?" cf-error="please enter in knowledge gained, if you feel you didn't learn anything, type 'none'" />
+        
+        <input required type="text" id="nothing-learned" name="cfc-nothing-learned" cf-questions="We are sorry you feel like you didn't learn anything in this training {trainee-name}. What could the trainer have done to help you better learn the material?" cf-error="please provide a response so we can better help you and others in the future" cf-conditional-cfc-knowledge-gained="^none||None||nothing||Nothing"/>
+        
+        <fieldset cf-questions="How likely would you be to recommend this training to a colleague or friend?">
+            <input required type="radio" name="cfc-recommend" id="recommend-1" value="1">
+            <label for="recommend-1">1 - Not Likely</label>
+
+            <input required type="radio" name="cfc-recommend" id="recommend-2" value="2">
+            <label for="recommend-2">2</label>
+
+            <input required type="radio" name="cfc-recommend" id="recommend-3" value="3">
+            <label for="recommend-3">3</label>
+
+            <input required type="radio" name="cfc-recommend" id="recommend-4" value="4">
+            <label for="recommend-4">4</label>
+
+            <input required type="radio" name="cfc-recommend" id="recommend-5" value="5">
+            <label for="recommend-5">5</label>
+
+            <input required type="radio" name="cfc-recommend" id="recommend-6" value="6">
+            <label for="recommend-6">6</label>
+
+            <input required type="radio" name="cfc-recommend" id="recommend-7" value="7">
+            <label for="recommend-7">7</label>
+
+            <input required type="radio" name="cfc-recommend" id="recommend-8" value="8">
+            <label for="recommend-8">8</label>
+
+            <input required type="radio" name="cfc-recommend" id="recommend-9" value="9">
+            <label for="recommend-9">9</label>
+
+            <input required type="radio" name="cfc-recommend" id="recommend-10" value="10">
+            <label for="recommend-10">10 - Very Likely</label>
+        </fieldset> 
+        
+        <input required type="text" id="recommend-text" name="cfc-recommend-text" cf-questions="What could the trainer have done to make this a more effective training for you?" cf-conditional-cfc-recommend="1||2||3||4||5||6||7" cf-error="please provide some details as to how the trainer could have been more helpful" />
+        
+        <fieldset cf-questions="Do you or your staff need/want any additional training?">
+            <input required type="radio" name="cfc-more-training" id="more-training-yes" value="yes">
+            <label for="more-training-yes">Yes</label>
+
+            <input required type="radio" name="cfc-more-training" id="more-training-no" value="no">
+            <label for="more-training-no">No</label>
+        </fieldset>
+        
+        <input required type="text" id="more-training-text" name="cfc-more-training-text" cf-questions="What do you want to learn more about?" cf-conditional-cfc-more-training="yes" cf-error="please provide some details of what training you need" />
+        
+        <input type="text" id="comments" name="cfc-comments" cf-questions="Any additional comments or notes for the training team?" cf-error="please provide some details of what training you need" />
+        
+        <cf-robot-message cf-questions="Thanks for taking time to help us improve our training {trainee-name}, we look forward to working with you again in the future"></cf-robot-message>
+        
+        <!--
         <fieldset cf-questions="<strong>{gr8}!</strong> Please choose a path.">
             <input required type="radio" name="cfc-path" id="path-a" value="a" cf-conditional-cfc-step1="^gr8$||great">
             <label for="path-a">Path A</label>
@@ -172,9 +282,10 @@
 -->
 
         <!--Path A-->
+<!--
         <input id="path-a-1" type="text" cf-questions="Path A question 1/1, try and change your previous choice to B" cf-conditional-cfc-path="a" />
 
-        <!--Path B-->
+        Path B
         <fieldset cf-questions="Path B question 1/2, multi choice">
             <input required type="checkbox" cf-conditional-cfc-path="b" name="cfc-path-b-checkbox" id="path-b-checkbox-1" value="test1">
             <label for="path-b-checkbox-1">Path B, checkbox 1</label>
@@ -182,11 +293,13 @@
             <input required type="checkbox" cf-conditional-cfc-path="b" name="cfc-path-b-checkbox" id="path-b-checkbox-2" value="test2" checked="checked">
             <label for="path-b-checkbox-2">Path B, checkbox 2</label>
         </fieldset>
+-->
 
 
         <!-- if both checkboxes are checked-->
         <!-- also path b -->
         <!-- two different conditions !-->
+<!--
         <input id="path-b-alternative" type="text" cf-questions="Both checkboxes checked and path 'b' was choosen, hurray \o/" cf-conditional-cfc-path="b" cf-conditional-cfc-path-b-checkbox="test1,test2" />
 
         <fieldset cf-questions="Path B question 2/2, radio buttons, <strong>hint:</strong> choose one to continue">
@@ -196,11 +309,13 @@
             <input required type="radio" cf-conditional-cfc-path="b" name="cfc-path-b-radio" id="path-b-radio-2" value="test2" checked="checked">
             <label for="path-b-radio-2">Path radio 2</label>
         </fieldset>
+-->
 
         <!--Path C-->
-        <input type="text" cf-questions="Path C question 1/1, I will be completly ignored as there is no C Path." cf-conditional-cfc-path="c" />
+<!--        <input type="text" cf-questions="Path C question 1/1, I will be completly ignored as there is no C Path." cf-conditional-cfc-path="c" />-->
 
         <!--Path D, section > option-->
+<!--
         <select cf-questions="Path D question 1/1, Pick an option." cf-conditional-cfc-path="d" name="path-d-option">
             <option value="option-a" selected>Path D 2/2 #1</option>
             <option value="option-b">Path D 2/2 #2</option>
@@ -209,8 +324,10 @@
         <input type="text" cf-questions="Path D question 2/2/1" cf-conditional-path-d-option="option-a" />
 
         <input type="text" cf-questions="Path D question 2/2/22" cf-conditional-path-d-option="option-b" />
+-->
 
         <!-- standard flow, no confitionals -->
+<!--
         <input id="nope" type="text" cf-questions="You decided not to continue on the conditional adventure, Zelda is sad." cf-conditional-cfc-trainer="no" />
 
         <fieldset cf-questions="I am apart of standard flow, a natural part of the flow. No conditionals involved here.">
@@ -222,6 +339,7 @@
         </fieldset>
 
         <input id="outsider" type="text" cf-questions="Lst step of the flow (not a conditional step)" />
+-->
     </form>
     <div id="cf-context" role="cf-context" cf-context></div>
 
@@ -243,4 +361,5 @@
     <script src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@latest/dist/conversational-form.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
